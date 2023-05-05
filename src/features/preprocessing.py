@@ -1,13 +1,15 @@
 """This module preprocesses the data"""
-import re
 import pickle
+import re
 from urllib.request import urlopen
+
+import joblib
 import nltk
 import pandas as pd
-import joblib
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 from sklearn.feature_extraction.text import CountVectorizer
+
 nltk.download('stopwords')
 
 class Preprocessing:

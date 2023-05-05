@@ -1,14 +1,13 @@
 """This module trains the model"""
-import os
 import json
+import os
+
 import joblib
 import pandas as pd
-
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
-from sklearn.metrics import accuracy_score
-from sklearn.feature_extraction.text import CountVectorizer
-
 
 if __name__ == '__main__':
     # Load data
