@@ -19,7 +19,8 @@ lib64/
 parts/
 sdist/
 var/
-.venv/
+.venv/lib/
+.venv/share/
 *.egg-info/
 .installed.cfg
 *.egg
