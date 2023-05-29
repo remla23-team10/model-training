@@ -21,6 +21,7 @@ sdist/
 var/
 .venv/lib/
 .venv/share/
+.mypy_cache/
 *.egg-info/
 .installed.cfg
 *.egg

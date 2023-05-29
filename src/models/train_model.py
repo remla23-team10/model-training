@@ -1,4 +1,5 @@
 """This module trains the model"""
+import os
 import json
 import joblib
 import pandas as pd
@@ -31,5 +32,8 @@ if __name__ == '__main__':
     # Save metrics
     y_pred = classifier.predict(X_test)
     # print(accuracy_score(y_test, y_pred))
-    with open('models/Classifier_Sentiment_Model.json', 'w', encoding='utf-8') as file:
+
+    if not os.path.exists('models/metrics'):
+        os.makedirs('models/metrics')
+    with open('models/metrics/Classifier_Sentiment_Model.json', 'w', encoding='utf-8') as file:
         json.dump({"accuracy": accuracy_score(y_test, y_pred)}, file)
