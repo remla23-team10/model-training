@@ -1,12 +1,12 @@
 # ML Project Report
 **Project** | **Details**
 --------|--------
-Date    | Mon, 29 May 2023 20:57:38 +0200 
+Date    | Mon, 29 May 2023 21:31:03 +0200 
 Path    | `/home/username/Documents/REMLA/model-training`
 Config  | `.mllint.yml`
 Default | No
 Git: Remote URL | `https://github.com/remla23-team10/model-training.git`
-Git: Commit     | `16f1680452e5a4e713cff2dda159af92089d2d26`
+Git: Commit     | `1f980f1a563fb2bec39e0168b21555aa57290abb`
 Git: Branch     | `mlconfig`
 Git: Dirty Workspace?  | No
 Number of Python files | 13
@@ -46,7 +46,7 @@ Thus, whenever your project is downloaded (with `git clone`), all these unnecess
 
 See [this StackOverflow answer](https://stackoverflow.com/a/46615578/8059181) to learn how to remove these files from your project's Git history.
 
-### Code Quality (`code-quality`) — **30.0**%
+### Code Quality (`code-quality`) — **46.7**%
 
 Passed | Score | Weight | Rule | Slug
 :-----:|------:|-------:|------|-----
@@ -55,10 +55,10 @@ Passed | Score | Weight | Rule | Slug
 ❌ | 0.0% | 1 | Pylint reports no issues with this project | `code-quality/pylint/no-issues`
 ✅ | 100.0% | 1 | Pylint is configured for this project | `code-quality/pylint/is-configured`
 ❌ | 0.0% | 1 | Mypy reports no issues with this project | `code-quality/mypy/no-issues`
-❌ | 0.0% | 1 | isort reports no issues with this project | `code-quality/isort/no-issues`
+✅ | 100.0% | 1 | isort reports no issues with this project | `code-quality/isort/no-issues`
 ❌ | 0.0% | 0 | isort is properly configured | `code-quality/isort/is-configured`
  | _Total_ | | | 
-❌ | **30.0**% | | Code Quality | `code-quality`
+❌ | **46.7**% | | Code Quality | `code-quality`
 
 #### Details — Project should use code quality linters — ❌
 
@@ -133,39 +133,34 @@ Mypy reported **29** issues with your project:
 - `setup.py:1,1` - Error: Skipping analyzing "setuptools": module is installed, but missing library stubs or py.typed marker  [import]
 - `docs/conf.py:29,1` - Error: Need type annotation for "extensions" (hint: "extensions: List[<type>] = ...")  [var-annotated]
 - `docs/conf.py:172,1` - Error: Need type annotation for "latex_elements" (hint: "latex_elements: Dict[<type>, <type>] = ...")  [var-annotated]
-- `src/models/train_model.py:4,1` - Error: Skipping analyzing "joblib": module is installed, but missing library stubs or py.typed marker  [import]
-- `src/models/train_model.py:7,1` - Error: Skipping analyzing "sklearn.model_selection": module is installed, but missing library stubs or py.typed marker  [import]
-- `src/models/train_model.py:8,1` - Error: Skipping analyzing "sklearn.naive_bayes": module is installed, but missing library stubs or py.typed marker  [import]
-- `src/models/train_model.py:9,1` - Error: Skipping analyzing "sklearn.metrics": module is installed, but missing library stubs or py.typed marker  [import]
-- `src/models/train_model.py:10,1` - Error: Skipping analyzing "sklearn.feature_extraction.text": module is installed, but missing library stubs or py.typed marker  [import]
-- `src/features/preprocessing.py:5,1` - Error: Skipping analyzing "nltk": module is installed, but missing library stubs or py.typed marker  [import]
-- `src/features/preprocessing.py:5,1` - Note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
-- `src/features/preprocessing.py:7,1` - Error: Skipping analyzing "joblib": module is installed, but missing library stubs or py.typed marker  [import]
-- `src/features/preprocessing.py:8,1` - Error: Skipping analyzing "nltk.corpus": module is installed, but missing library stubs or py.typed marker  [import]
-- `src/features/preprocessing.py:9,1` - Error: Skipping analyzing "nltk.stem.porter": module is installed, but missing library stubs or py.typed marker  [import]
-- `src/features/preprocessing.py:10,1` - Error: Skipping analyzing "sklearn.feature_extraction.text": module is installed, but missing library stubs or py.typed marker  [import]
-- `src/features/preprocessing.py:16,5` - Error: Function is missing a return type annotation  [no-untyped-def]
-- `src/features/preprocessing.py:16,5` - Note: Use "-> None" if function does not return a value
-- `src/features/preprocessing.py:26,5` - Error: Function is missing a type annotation  [no-untyped-def]
-- `src/features/preprocessing.py:31,27` - Error: Call to untyped function "preprocess_review" in typed context  [no-untyped-call]
-- `src/features/preprocessing.py:34,5` - Error: Function is missing a type annotation  [no-untyped-def]
-- `src/features/preprocessing.py:44,5` - Error: Function is missing a type annotation  [no-untyped-def]
-- `src/features/preprocessing.py:49,5` - Error: Function is missing a type annotation  [no-untyped-def]
-- `src/features/preprocessing.py:56,5` - Error: Function is missing a type annotation  [no-untyped-def]
-- `src/features/preprocessing.py:61,5` - Error: Function is missing a type annotation  [no-untyped-def]
-- `src/features/preprocessing.py:66,5` - Error: Function is missing a type annotation  [no-untyped-def]
-- `src/features/preprocessing.py:74,20` - Error: Call to untyped function "Preprocessing" in typed context  [no-untyped-call]
-- `src/features/preprocessing.py:75,12` - Error: Call to untyped function "preprocess_dataset" in typed context  [no-untyped-call]
+- `src/models/train_model.py:5,1` - Error: Skipping analyzing "joblib": module is installed, but missing library stubs or py.typed marker  [import]
+- `src/models/train_model.py:7,1` - Error: Skipping analyzing "sklearn.feature_extraction.text": module is installed, but missing library stubs or py.typed marker  [import]
+- `src/models/train_model.py:8,1` - Error: Skipping analyzing "sklearn.metrics": module is installed, but missing library stubs or py.typed marker  [import]
+- `src/models/train_model.py:9,1` - Error: Skipping analyzing "sklearn.model_selection": module is installed, but missing library stubs or py.typed marker  [import]
+- `src/models/train_model.py:10,1` - Error: Skipping analyzing "sklearn.naive_bayes": module is installed, but missing library stubs or py.typed marker  [import]
+- `src/features/preprocessing.py:6,1` - Error: Skipping analyzing "joblib": module is installed, but missing library stubs or py.typed marker  [import]
+- `src/features/preprocessing.py:6,1` - Note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+- `src/features/preprocessing.py:7,1` - Error: Skipping analyzing "nltk": module is installed, but missing library stubs or py.typed marker  [import]
+- `src/features/preprocessing.py:9,1` - Error: Skipping analyzing "nltk.corpus": module is installed, but missing library stubs or py.typed marker  [import]
+- `src/features/preprocessing.py:10,1` - Error: Skipping analyzing "nltk.stem.porter": module is installed, but missing library stubs or py.typed marker  [import]
+- `src/features/preprocessing.py:11,1` - Error: Skipping analyzing "sklearn.feature_extraction.text": module is installed, but missing library stubs or py.typed marker  [import]
+- `src/features/preprocessing.py:18,5` - Error: Function is missing a return type annotation  [no-untyped-def]
+- `src/features/preprocessing.py:18,5` - Note: Use "-> None" if function does not return a value
+- `src/features/preprocessing.py:28,5` - Error: Function is missing a type annotation  [no-untyped-def]
+- `src/features/preprocessing.py:33,27` - Error: Call to untyped function "preprocess_review" in typed context  [no-untyped-call]
+- `src/features/preprocessing.py:36,5` - Error: Function is missing a type annotation  [no-untyped-def]
+- `src/features/preprocessing.py:46,5` - Error: Function is missing a type annotation  [no-untyped-def]
+- `src/features/preprocessing.py:51,5` - Error: Function is missing a type annotation  [no-untyped-def]
+- `src/features/preprocessing.py:58,5` - Error: Function is missing a type annotation  [no-untyped-def]
+- `src/features/preprocessing.py:63,5` - Error: Function is missing a type annotation  [no-untyped-def]
+- `src/features/preprocessing.py:68,5` - Error: Function is missing a type annotation  [no-untyped-def]
+- `src/features/preprocessing.py:76,20` - Error: Call to untyped function "Preprocessing" in typed context  [no-untyped-call]
+- `src/features/preprocessing.py:77,12` - Error: Call to untyped function "preprocess_dataset" in typed context  [no-untyped-call]
 
 
-#### Details — isort reports no issues with this project — ❌
+#### Details — isort reports no issues with this project — ✅
 
-isort reported **2** files in your project that it would fix:
-
-- `src/features/preprocessing.py` - Imports are incorrectly sorted and/or formatted.
-- `src/models/train_model.py` - Imports are incorrectly sorted and/or formatted.
-
-isort can fix these issues automatically when you run `isort .` in your project.
+Congratulations, `isort` is happy with your project!
 
 #### Details — isort is properly configured — ❌
 

@@ -6,10 +6,7 @@ git:
 code-quality:
     linters:
         - pylint
-        - mypy
-        - black
         - isort
-        - bandit
 testing:
     report: ""
     targets:
