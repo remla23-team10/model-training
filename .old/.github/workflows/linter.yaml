@@ -11,11 +11,13 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: '3.x'
+    - name: Activate venv
+      run: source .venv/bin/activate
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Run pylint
-      run: pylint *.py
-    - name: Run dslint
-      run: dlint .
+      run: pylint src
+    - name: Run dslinter
+      run: pylint --load-plugins= src

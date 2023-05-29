@@ -14,8 +14,11 @@ nltk>=3.8.1
 scipy>=1.9.3
 scikit-learn>=1.2.2
 fsspec #==2022.7.1
-pylint>=2.12.2
+pylint==2.12.2
 dvc
+
+dslinter
+mllint
 
 # backwards compatibility
 pathlib2

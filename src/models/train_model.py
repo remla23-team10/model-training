@@ -1,18 +1,19 @@
-import numpy as np
-import pandas as pd
+"""This module trains the model"""
 import json
 import joblib
+import pandas as pd
 
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
-from sklearn.metrics import confusion_matrix, accuracy_score
+from sklearn.metrics import accuracy_score
 from sklearn.feature_extraction.text import CountVectorizer
 
 
 if __name__ == '__main__':
     # Load data
     corpus = joblib.load('data/processed/corpus.joblib')
-    dataset = pd.read_csv('data/external/a1_RestaurantReviews_HistoricDump.tsv', delimiter = '\t', quoting = 3)
+    dataset = pd.read_csv('data/external/a1_RestaurantReviews_HistoricDump.tsv',
+                          delimiter = '\t', quoting = 3)
     cv = CountVectorizer(max_features = 1420)
 
     # Train
@@ -25,9 +26,10 @@ if __name__ == '__main__':
 
     # Save model
     joblib.dump(cv, 'data/processed/BoW_Vectorizer.joblib')
-    joblib.dump(classifier, 'models/Classifier_Sentiment_Model.joblib') 
+    joblib.dump(classifier, 'models/Classifier_Sentiment_Model.joblib')
 
     # Save metrics
     y_pred = classifier.predict(X_test)
     # print(accuracy_score(y_test, y_pred))
-    json.dump({"accuracy": accuracy_score(y_test, y_pred)}, open('models/metrics/Classifier_Sentiment_Model.json', 'w'))
+    with open('models/Classifier_Sentiment_Model.json', 'w', encoding='utf-8') as file:
+        json.dump({"accuracy": accuracy_score(y_test, y_pred)}, file)
