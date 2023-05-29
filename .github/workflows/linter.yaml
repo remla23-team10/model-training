@@ -20,4 +20,4 @@ jobs:
     - name: Run pylint
       run: pylint src
     - name: Run dslinter
-      run: pylint --load-plugins= src
+      run: pylint --load-plugins=dslinter src
