@@ -15,7 +15,7 @@ if __name__ == '__main__':
     corpus = joblib.load('data/processed/corpus.joblib')
     dataset = pd.read_csv('data/external/a1_RestaurantReviews_HistoricDump.tsv',
                           delimiter = '\t', quoting = 3)
-    cv = CountVectorizer(max_features = 1420)
+    cv = CountVectorizer(max_features = 1440)
 
     # Train
     X = cv.fit_transform(corpus).toarray()

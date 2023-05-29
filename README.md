@@ -4,6 +4,7 @@ Repo for training the model
 
 ## Usage
 
+### Training
 1. Activate the virtual environment
 
     ```bash
@@ -19,6 +20,13 @@ Repo for training the model
     ```bash
     dvc repro
     ```
+
+### Backing up artifacts to Google Drive
+
+1. Activate the virtual environment
+2. Attain access to the Google Drive folder
+3. Run `dvc pull` to initiate the authorization process. This will open a browser window where you can authorize the app to access your Google Drive folder.
+4. Return to the terminal. Run `dvc push` after `dvc repro` to push the artifacts to the Google Drive folder. 
 
 ## Project Organization
 
