@@ -72,7 +72,8 @@ class Preprocessing:
 
 if __name__ == "__main__":
     pandas_dataset = pd.read_csv('data/external/a1_RestaurantReviews_HistoricDump.tsv',
-                          delimiter = '\t', quoting = 3)
+                          delimiter = '\t', quoting = 3,
+                          dtype={'Review': str, 'Liked': bool})
     preprocesser = Preprocessing()
     corp = preprocesser.preprocess_dataset(pandas_dataset)
     joblib.dump(corp, 'data/processed/corpus.joblib')

@@ -13,7 +13,8 @@ if __name__ == '__main__':
     # Load data
     corpus = joblib.load('data/processed/corpus.joblib')
     dataset = pd.read_csv('data/external/a1_RestaurantReviews_HistoricDump.tsv',
-                          delimiter = '\t', quoting = 3)
+                          delimiter = '\t', quoting = 3,
+                          dtype={'Review': str, 'Liked': bool})
     cv = CountVectorizer(max_features = 1440)
 
     # Train
