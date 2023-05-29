@@ -2,8 +2,25 @@
 
 Repo for training the model
 
-## Project Organization
+## Usage
 
+1. Activate the virtual environment
+
+    ```bash
+    source venv/bin/activate
+    ```
+2. Install the requirements
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+3. Reproduce the training. This will download the data, preprocess it, train the model and save it in the `models` folder as `Classifier_Sentiment_Model.joblib`
+
+    ```bash
+    dvc repro
+    ```
+
+## Project Organization
 
     ├── LICENSE
     ├── Makefile           <- Makefile with commands like `make data` or `make train`
