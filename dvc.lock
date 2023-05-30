@@ -37,7 +37,7 @@ stages:
       size: 1401
     outs:
     - path: data/processed/BoW_Vectorizer.joblib
-      md5: ff78df17b9a366d7114dae1b0dcceb88
+      md5: 4efe75867f4aa976d5e813215f8eee46
       size: 40203
     - path: models/Classifier_Sentiment_Model.joblib
       md5: 5045323a2391ff863a69d2ac40ec9de5
