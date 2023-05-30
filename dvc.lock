@@ -4,8 +4,8 @@ stages:
     cmd: python3 src/data/get_data.py
     deps:
     - path: src/data/get_data.py
-      md5: 603e9737deff0b1e7c6ab727660f0f73
-      size: 377
+      md5: c46b6d4166d21992066f7c6ed1e8606c
+      size: 478
     outs:
     - path: data/external/a1_RestaurantReviews_HistoricDump.tsv
       md5: 102f1f4193e0bdebdd6cce7f13e0a839
@@ -17,8 +17,8 @@ stages:
       md5: 102f1f4193e0bdebdd6cce7f13e0a839
       size: 54686
     - path: src/features/preprocessing.py
-      md5: 4fe43948daf338d8b8e820070c8a7f84
-      size: 2799
+      md5: e7bca468b1a8f0f3c4feb63d7401dc2a
+      size: 2892
     outs:
     - path: data/processed/corpus.joblib
       md5: 243212bb05cce5e3fdc72bfd2826d329

@@ -1,6 +1,7 @@
 """This module preprocesses the data"""
 import pickle
 import re
+import os
 from urllib.request import urlopen
 
 import joblib
@@ -76,4 +77,6 @@ if __name__ == "__main__":
                           dtype={'Review': str, 'Liked': bool})
     preprocesser = Preprocessing()
     corp = preprocesser.preprocess_dataset(pandas_dataset)
+    if not os.path.exists('data/processed'):
+        os.makedirs('data/processed')
     joblib.dump(corp, 'data/processed/corpus.joblib')
