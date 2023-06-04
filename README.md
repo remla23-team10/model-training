@@ -32,6 +32,10 @@ Clone the repo and `cd` into it.
 3. Run `dvc pull` to initiate the authorization process. This will open a browser window where you can authorize the app to access your Google Drive folder.
 4. Run `dvc repro` and `dvc push` to push the artifacts to the Google Drive folder. 
 
+### Running tests
+To run the unit tests for this project, run `pytest` in the root folder.
+
+
 ## Project Organization
 
     ├── .dvc               <- DVC files
