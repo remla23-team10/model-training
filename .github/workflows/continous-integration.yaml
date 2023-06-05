@@ -28,6 +28,7 @@ jobs:
         pytest tests --junitxml=reports/test-results.xml --html=reports/test-results.html
     - name: Upload coverage report
       uses: actions/upload-artifact@v2
+      if: success() || failure()        # run this step even if previous step failed
       with:
         name: test-results
-        path: reports/test-results.html
+        path: reports/test-results.xml
