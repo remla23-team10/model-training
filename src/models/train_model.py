@@ -10,14 +10,14 @@ from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
 
 
-def train(seed=0):
+def train(seed=0, cv_features=1440):
     """Trains the model and saves it to disk"""
     # Load data
     corpus = joblib.load('data/processed/corpus.joblib')
     dataset = pd.read_csv('data/external/a1_RestaurantReviews_HistoricDump.tsv',
                           delimiter = '\t', quoting = 3,
                           dtype={'Review': str, 'Liked': bool})
-    count_vectorizer = CountVectorizer(max_features = 1440)
+    count_vectorizer = CountVectorizer(max_features = cv_features)
 
     # Train
     x_train_array = count_vectorizer.fit_transform(corpus).toarray()
