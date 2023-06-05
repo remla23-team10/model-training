@@ -1,5 +1,7 @@
 # model-training-cookie
 
+![CI](https://github.com/remla23-team10/model-training/actions/workflows/continous-integration.yaml/badge.svg)
+
 Repo for training the model
 
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>.</small></p>
@@ -31,6 +33,10 @@ Clone the repo and `cd` into it.
 2. Attain access to the Google Drive folder
 3. Run `dvc pull` to initiate the authorization process. This will open a browser window where you can authorize the app to access your Google Drive folder.
 4. Run `dvc repro` and `dvc push` to push the artifacts to the Google Drive folder. 
+
+### Running tests
+To run the unit tests for this project, run `pytest` in the root folder.
+
 
 ## Project Organization
 
