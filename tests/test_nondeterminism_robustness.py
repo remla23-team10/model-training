@@ -22,4 +22,14 @@ def test_nondeterminism_robustness():
         print(f"Difference in accuracy for seed {seed}: {acc_trained_new - acc_trained}")
         assert abs(acc_trained_new - acc_trained) < 0.05
 
+def test_nondeterminism_robustness():
+    "Model Validation test"
+
+    original_accuracy, _, _, _ = train()
+
+    for seed in [10, 20, 30, 40, 50]:
+        new_accuraccy, _, _, _ = train(seed)
+        print(f"Accuracy with seed {seed} " + str(new_accuraccy), seed)
+        print("Original accuracy " + str(original_accuracy))
+        assert abs(original_accuracy - new_accuraccy) <= 0.15
 
