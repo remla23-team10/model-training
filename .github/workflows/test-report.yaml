@@ -1,7 +1,7 @@
 name: 'Test Report'
 on:
   workflow_run:
-    workflows: ['continous-integration']  # runs after CI workflow
+    workflows: ['Continuous-integration']  # runs after CI workflow
     types:
       - completed
 jobs:
