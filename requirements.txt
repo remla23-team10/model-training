@@ -17,7 +17,8 @@ fsspec #==2022.7.1
 pylint==2.12.2
 dvc
 dvc-gdrive
-pytest
+pytest==7.3.1
+pytest-cov==4.1.0
 joblib==1.1.1
 
 dslinter
