@@ -8,7 +8,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python and Install requirements
-      uses: .github/workflows/python-setup.yaml
+      uses: ./.github/workflows/python-setup.yaml
     - name: Run pylint
       run: pylint src
     - name: Run dslinter
@@ -19,7 +19,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python and Install requirements
-      uses: .github/workflows/python-setup.yaml
+      uses: ./.github/workflows/python-setup.yaml
     - name: Obtain data
       run: |
         dvc repro
