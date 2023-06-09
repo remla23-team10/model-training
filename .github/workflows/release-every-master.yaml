@@ -28,5 +28,5 @@ jobs:
           prerelease: true
           title: "Development Build"
           files: |
-            LICENSE.txt
-            *.jar
+            models/Classifier_Sentiment_Model.joblib
+            data/processed/BoW_Vectorizer.joblib
