@@ -33,15 +33,15 @@ stages:
       md5: 243212bb05cce5e3fdc72bfd2826d329
       size: 31612
     - path: src/models/train_model.py
-      md5: cef5a238fecbd70dd4cb0f60246c818b
-      size: 1856
+      md5: f89434cbb6f0ade2f3050de7c7e901cd
+      size: 2103
     outs:
     - path: data/processed/BoW_Vectorizer.joblib
-      md5: 913712fd9c8362ea4cddb81c3cfecab7
-      size: 40206
+      md5: 4dc249053c34fec8eb2275f052148025
+      size: 40203
     - path: models/Classifier_Sentiment_Model.joblib
-      md5: 5045323a2391ff863a69d2ac40ec9de5
-      size: 46855
+      md5: 94478bb924a6236565c81c70d9a65fce
+      size: 46755
     - path: models/metrics/Classifier_Sentiment_Model.json
       md5: a1f14198b0f42339ed3450a3107a59e1
       size: 127

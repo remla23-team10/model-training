@@ -1,4 +1,4 @@
-name: Release Model
+name: pre-release
 
 on:
   push:
@@ -7,18 +7,26 @@ on:
       - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  pre-release:
+    name: "Pre Release"
+    runs-on: "ubuntu-latest"
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Build
-        run: echo ${{ github.sha }} > Release.txt
-      - name: Test
-        run: cat Release.txt
-      - name: Release
-        uses: softprops/action-gh-release@v1
+      - name: "Checkout"
+        uses: "actions/checkout@v2"
+      - name: Use Python
+        uses: actions/setup-python@v2
         with:
+          python-version: '3.9'
+      - name: "Install dependencies"
+        run: pip install -r requirements.txt
+      - name: Run dvc repro
+        run: dvc repro
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build"
           files: |
-            models/Classifier_Sentiment_Model.joblib
-            data/processed/BoW_Vectorizer.joblib
+            LICENSE.txt
+            *.jar
