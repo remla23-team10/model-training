@@ -1,8 +1,5 @@
 """This module preprocesses the data"""
-import pickle
-import re
 import os
-from urllib.request import urlopen
 
 import joblib
 import pandas as pd
