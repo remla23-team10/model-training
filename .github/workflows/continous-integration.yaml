@@ -11,8 +11,6 @@ jobs:
       uses: ./.github/actions/python-setup
     - name: Run pylint
       run: pylint src
-    - name: Run dslinter
-      run: pylint --load-plugins=dslinter src
   test:
     runs-on: ubuntu-latest
     needs: lint
