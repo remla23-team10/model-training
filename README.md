@@ -14,7 +14,7 @@ Clone the repo and `cd` into it.
 1. Activate the virtual environment
 
     ```bash
-    source venv/bin/activate
+    source .venv/bin/activate
     ```
 2. Install the requirements
 
