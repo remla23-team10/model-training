@@ -2,6 +2,8 @@
 
 ![CI](https://github.com/remla23-team10/model-training/actions/workflows/continous-integration.yaml/badge.svg)
 
+[![Coverage Status](https://coveralls.io/repos/github/remla23-team10/model-training/badge.svg)](https://coveralls.io/repos/github/remla23-team10/model-training)
+
 Repo for training the model
 
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>.</small></p>
