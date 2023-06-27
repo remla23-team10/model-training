@@ -23,7 +23,7 @@ jobs:
         dvc repro
     - name: Test with pytest
       run: |
-        pytest --junitxml=reports/test-results.xml --html=reports/test-results.html --cov-report lcov --cov=src
+        coverage run --source=src -m pytest --junitxml=reports/test-results.xml --html=reports/test-results.html && coverage lcov
     - name: Upload test results
       uses: actions/upload-artifact@v2
       if: success() || failure()        # run this step even if previous step failed
@@ -32,3 +32,6 @@ jobs:
         path: reports/test-results.xml
     - name: Coveralls
       uses: coverallsapp/github-action@v2
+      with:
+        file: coverage.lcov
+        github-token: ${{ secrets.GITHUB_TOKEN }}
