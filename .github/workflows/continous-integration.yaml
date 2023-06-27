@@ -23,7 +23,7 @@ jobs:
         dvc repro
     - name: Test with pytest
       run: |
-        pytest tests --junitxml=reports/test-results.xml --html=reports/test-results.html --cov-report lcov --cov=tests
+        pytest --junitxml=reports/test-results.xml --html=reports/test-results.html --cov-report lcov --cov=tests
     - name: Upload test results
       uses: actions/upload-artifact@v2
       if: success() || failure()        # run this step even if previous step failed
