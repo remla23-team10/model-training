@@ -1,12 +1,12 @@
-import joblib
-import nltk
+"""Implementation for mutamorphic testing and automatic repair"""
 import random
 import logging
+
+import nltk
+import joblib
 import pandas as pd
-from pprint import pprint
 from nltk.corpus import stopwords, wordnet
 from restaurant_preprocessing import Preprocessing
-from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer
 nltk.download('wordnet')
 
@@ -16,6 +16,7 @@ preprocesser = Preprocessing()
 preprocesser.vectorizer_from_pkl('data/processed/BoW_Vectorizer.joblib')
 
 def preprocess(sentence):
+    """Preprocess a sentence"""
     preprocessed = preprocesser.preprocess_review(sentence)
     return preprocesser.transform([preprocessed])
 
@@ -24,7 +25,7 @@ def automatic_test_input_generation(sentence: str) -> set:
     For each word in the sentence excluding stopwords,
     generate a mutant by replacing the word with a similar word.
     """
-    
+
     mutants = {sentence}
     for i, word in enumerate(sentence.split()):
         if word not in stopwords.words('english'):
@@ -42,6 +43,7 @@ def automatic_test_input_generation(sentence: str) -> set:
 
 
 def automatic_test_oracle_generation_and_repair(original, mutants):
+    """Test the original and mutants"""
     processed_original = preprocess(original)
     processed_mutants = [preprocess(m) for m in mutants]
     prediction_original = classifier.predict(processed_original)[0]
@@ -55,17 +57,16 @@ def automatic_test_oracle_generation_and_repair(original, mutants):
     logging.info("RES: %s", res)
     return {"original": prediction_original, "mutants": res}
 
-if __name__ == "__main__":
+def test_mutamorphic():
     """Test 100 sentences."""
-    corpus = joblib.load('data/processed/corpus.joblib')
     dataset = pd.read_csv('data/external/a1_RestaurantReviews_HistoricDump.tsv',
                           delimiter = '\t', quoting = 3,
-                          dtype={'Review': str, 'Liked': bool})    
+                          dtype={'Review': str, 'Liked': bool})
     random_lines = dataset.sample(n=100)
 
     # Get average accuracy of original vs mutants
     predictions = []
-    for index, row in random_lines.iterrows():
+    for _, row in random_lines.iterrows():
         test_sentence = row['Review']
         mutants = automatic_test_input_generation(test_sentence)
         result = automatic_test_oracle_generation_and_repair(test_sentence, mutants)
@@ -75,6 +76,4 @@ if __name__ == "__main__":
     avg_mutants = sum([1 for p in predictions if p["mutants"] == p["true_value"]]) / len(predictions)
     print("Average original: ", avg_original)
     print("Average mutants: ", avg_mutants)
-    # We found that mutants do not always have a higher accuracy than the original, but are around the same.
-    # Therefore the assertion is taken out.
-    # assert avg_original <= avg_mutants
+    assert abs(avg_original-avg_mutants) <= 0.05

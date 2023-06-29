@@ -55,8 +55,6 @@ To run the unit tests for this project, run `pytest` in the root folder.
     │   ├── processed      <- The dataset after preprocessing.
     │   └── raw            <- The original, immutable data dump.
     │
-    ├── docs               <- A default Sphinx project; 
-    │
     ├── models             <- Trained models
     │   └── metrics        <- Metrics for model evaluation
     │
