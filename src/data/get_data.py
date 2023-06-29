@@ -11,5 +11,4 @@ if __name__ == '__main__':
 
     if not os.path.exists('data/external'):
         os.makedirs('data/external')
-    # downloaded_file, headers = urllib.request.urlretrieve(URL, FILENAME)
     gdown.download(URL, FILENAME, quiet=True)
