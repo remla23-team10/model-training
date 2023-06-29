@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 """This module downloads the data from the SurfDrive"""
 import os
-import urllib.request
-import dvc
 import gdown
 
 if __name__ == '__main__':
