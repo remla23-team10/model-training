@@ -37,8 +37,14 @@ Clone the repo and `cd` into it.
 4. Run `dvc repro` and `dvc push` to push the artifacts to the Google Drive folder. 
 
 ### Running tests
-To run the unit tests for this project, run `pytest` in the root folder.
+To run the unit tests for this project, run `pytest` in the root folder. To create a test and coverage reports to be used later with mllint, run:
 
+```bash
+pytest --junitxml=reports/test-results.xml --cov=src
+```
+
+### Run linters
+To run the linters (pylint + dslinter and mllint), run `pylint` and `mllint` respectively.
 
 ## Project Organization
 
@@ -54,8 +60,6 @@ To run the unit tests for this project, run `pytest` in the root folder.
     │   ├── interim        <- Intermediate data that has been transformed.
     │   ├── processed      <- The dataset after preprocessing.
     │   └── raw            <- The original, immutable data dump.
-    │
-    ├── docs               <- A default Sphinx project; 
     │
     ├── models             <- Trained models
     │   └── metrics        <- Metrics for model evaluation
