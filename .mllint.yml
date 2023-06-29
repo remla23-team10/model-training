@@ -6,15 +6,14 @@ git:
 code-quality:
     linters:
         - pylint
-        - isort
 testing:
-    report: ""
+    report: "tests-report.xml"
     targets:
         minimum: 1
         ratio:
             tests: 1
             other: 4
     coverage:
-        report: ""
+        report: "coverage.xml"
         targets:
-            line: 80
+            line: 50

@@ -1,4 +1,4 @@
-import os
+"""Test for nondeterminism robustness"""
 import joblib
 from src.models.train_model import train
 
@@ -16,4 +16,3 @@ def test_nondeterminism_robustness():
         # print(f"Accuracy with seed {seed} " + str(new_accuraccy), seed)
         # print("Original accuracy " + str(original_accuracy))
         assert abs(original_accuracy - new_accuraccy) <= 0.15
-
