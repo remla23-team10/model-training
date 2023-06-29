@@ -61,7 +61,7 @@ def automatic_test_oracle_generation_and_repair(original, mutants):
     return {"original": prediction_original, "mutants": res}
 
 if __name__ == "__main__":
-    # Test 100 sentences. 
+    """Test 100 sentences."""
     corpus = joblib.load('data/processed/corpus.joblib')
     dataset = pd.read_csv('data/external/a1_RestaurantReviews_HistoricDump.tsv',
                           delimiter = '\t', quoting = 3,
@@ -69,8 +69,8 @@ if __name__ == "__main__":
     
     random_lines = dataset.sample(n=100)
     x_values = random_lines['Review'].values
-    # print(x_values[:3]); raise SystemExit
 
+    # Get average accuracy of original vs mutants
     predictions = []
     for index, row in dataset.iterrows():
         test_sentence = row['Review']
@@ -80,6 +80,8 @@ if __name__ == "__main__":
         predictions.append(result)
     avg_original = sum([1 for p in predictions if p["original"] == p["true_value"]]) / len(predictions)
     avg_mutants = sum([1 for p in predictions if p["mutants"] == p["true_value"]]) / len(predictions)
+    print([p["mutants"] for p in predictions])
+    print([p["original"] for p in predictions])
     print("Average original: ", avg_original)
     print("Average mutants: ", avg_mutants)
     assert avg_original <= avg_mutants
