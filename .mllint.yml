@@ -7,7 +7,7 @@ code-quality:
     linters:
         - pylint
 testing:
-    report: "tests-report.xml"
+    report: "reports/test-results.xml"
     targets:
         minimum: 1
         ratio:
